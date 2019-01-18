@@ -1,4 +1,3 @@
-
 def race_winner
-  return "airton"
+  'airton'
 end

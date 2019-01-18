@@ -1,4 +1,12 @@
-require 'race'
+require_relative '../lib/race'
+
+describe 'Race', :race do
+  it 'should be initialized without defining properties' do
+    race = Race.new
+    expect(race).to be_a(Race)
+  end
+end
+
 
 describe 'The method race_winner:' do
   it 'Is not nil' do

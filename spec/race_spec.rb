@@ -28,5 +28,10 @@ describe 'The method parse_data:' do
   it 'First element returns a hash' do
     expect(parse_data[0]).to be_a Hash
   end
-
+  it 'First element is not nil' do
+    expect(parse_data[0][:hour]).not_to be_nil
+  end
+  it 'First element is not empty' do
+    expect(parse_data[0][:hour]).not_to eq('')
+  end
 end

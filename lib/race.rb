@@ -24,12 +24,15 @@ class Race
     @laps_hash
   end
 
-#   def create_lap_instances
-#     # @laps.each do |lap|
-#     #   Lap.new()
-#     # end
-#     p "ihull"
-#   end
-# end
+  def create_lap_instances
+    @laps = []
+    @laps_hash.each do |lap|
+      properties = { cod: lap[:cod], pilot: lap[:pilot], lap_number: lap[:lap_number], lap_time: lap[:lap_time] }
+      @laps << Lap.new(properties)
+      # p "ihull"
+    end
+    @laps
+  end
+end
 
 # r = Race.new

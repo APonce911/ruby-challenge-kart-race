@@ -11,5 +11,4 @@ describe 'The method race_winner:' do
   it 'Returns a string' do
     expect(race_winner).to be_a String
   end
-
 end

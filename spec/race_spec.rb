@@ -45,3 +45,28 @@ describe 'The method parse_data:' do
     expect(race.send(:parse_data)[0][:hour]).not_to eq('')
   end
 end
+
+describe 'The method create_lap_instances:' do
+  race = Race.new
+  it 'Is not nil' do
+    expect(race.send(:create_lap_instances)).not_to be_nil
+  end
+  it 'Is not empty' do
+    expect(race.send(:create_lap_instances)).not_to eq('')
+  end
+  it 'Returns an array' do
+    expect(race.send(:create_lap_instances)).to be_a Array
+  end
+  it 'Has 23 laps' do
+    expect(race.send(:create_lap_instances).size).to eq(23)
+  end
+  it 'First element returns a Lap instance' do
+    expect(race.send(:create_lap_instances)[0]).to be_a(Lap)
+  end
+  it 'First element is not nil' do
+    expect(race.send(:create_lap_instances)[0].cod).not_to be_nil
+  end
+  it 'First element is not empty' do
+    expect(race.send(:create_lap_instances)[0].cod).not_to eq('')
+  end
+end

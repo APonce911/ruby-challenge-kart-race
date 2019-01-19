@@ -13,19 +13,11 @@ class Controller
   def initialize(race)
     @race = race
     @view = View.new
-    individual_times
   end
 
   def race_winner
-    print %x{clear}
-    ranking = []
-    @individual_times.each do |laps|
-      if laps[1].size == 4
-        pilot_total_time_array = [laps[0], laps[1].sum.truncate(3)]
-        ranking << pilot_total_time_array
-      end
-    end
-    ranking.sort_by! { |pilot_total_time_array| pilot_total_time_array[1] }
+    individual_times
+    ranking = generate_ranking
     @view.print_winner(ranking[0][0], seconds_to_string(ranking[0][1]))
   end
 
@@ -47,5 +39,16 @@ class Controller
         @individual_times[lap.pilot.to_sym] = [lap.lap_time]
       end
     end
+  end
+
+  def generate_ranking
+    ranking = []
+    @individual_times.each do |laps|
+      if laps[1].size == 4
+        pilot_total_time_array = [laps[0], laps[1].sum.truncate(3)]
+        ranking << pilot_total_time_array
+      end
+    end
+    ranking.sort_by! { |pilot_total_time_array| pilot_total_time_array[1] }
   end
 end

@@ -1,3 +1,5 @@
+# the router will be responsible for communicating the command
+# line with the APP controller
 class Router
   def initialize(controller)
     @controller = controller
@@ -5,8 +7,9 @@ class Router
   end
 
   def run
-    puts "welcome to the Kart race challenge APP!"
-    puts "           --           "
+    # print %x{clear}
+    puts 'welcome to the Kart race challenge APP!'
+    puts '           --           '
 
     while @running
       display_tasks
@@ -26,7 +29,7 @@ class Router
     # when 4 then @controller
     when 99 then stop
     else
-      puts "Please press 1 or 99"
+      puts 'Please press 1 or 99'
     end
   end
 
@@ -35,10 +38,9 @@ class Router
   end
 
   def display_tasks
-    puts ""
-    puts "What do you want to do next?"
-    puts "1 - Race winner info"
-    puts "99 - stop"
-
+    puts ''
+    puts 'What do you want to do next?'
+    puts '1  - Race winner info'
+    puts '99 - stop'
   end
 end

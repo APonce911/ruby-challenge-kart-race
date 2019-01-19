@@ -97,3 +97,20 @@ describe 'The method Controller#race_ranking_table:' do
     expect(controller.race_ranking_table[0][1]).to be_a Hash
   end
 end
+
+describe 'The method Controller#best_user_lap:' do
+  let(:race) { Race.new }
+  let(:controller) { Controller.new(race) }
+
+  it 'Is not nil' do
+    expect(controller.best_user_lap).not_to be_nil
+  end
+  it 'Is not empty' do
+    expect(controller.best_user_lap).not_to eq('')
+  end
+  it 'Returns a Lap instance' do
+    expect(controller.best_user_lap).to be_a Hash
+    # expect(lap).to be_a(Lap)
+
+  end
+end

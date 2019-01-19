@@ -12,8 +12,9 @@ class Lap
   private
 
   def string_to_seconds(string)
-    min_to_sec = string[0].to_i * 60
-    mil_to_sec = string[5..7].to_f / 1000
-    string[2..3].to_f + mil_to_sec + min_to_sec
+    min_to_sec = (string[0].to_i * 60).truncate(0)
+    mil_to_sec = (string[5..7].to_f / 1000).truncate(3)
+    seconds = string[2..3].to_f.truncate(0)
+    (seconds + mil_to_sec + min_to_sec).truncate(3)
   end
 end

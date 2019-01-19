@@ -25,7 +25,7 @@ class Router
     case action
     when 1 then @controller.race_winner
     when 2 then @controller.best_race_lap
-    # when 3 then @controller
+    when 3 then @controller.race_ranking_table
     # when 4 then @controller
     when 99 then stop
     else
@@ -42,6 +42,7 @@ class Router
     puts 'What would you like to know about the race?'
     puts '1  - Race winner info'
     puts '2  - Best lap on race'
+    puts '3  - Ranking table'
     puts '99 - stop'
   end
 end

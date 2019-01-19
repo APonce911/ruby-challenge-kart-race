@@ -21,7 +21,7 @@ class View
     end
   end
 
-  def print_best_user_lap(lap,time)
+  def print_best_pilot_lap(lap,time)
     # print %x{clear}
     puts "The best lap of #{lap.pilot}"
     puts "Hour         | Pilot          | Lap Number| Lap Time| Lap avg pace"

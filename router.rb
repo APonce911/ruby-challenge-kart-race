@@ -26,7 +26,7 @@ class Router
     when 1 then @controller.race_winner
     when 2 then @controller.best_race_lap
     when 3 then @controller.race_ranking_table
-    # when 4 then @controller
+    when 4 then @controller.best_pilot_lap
     when 99 then stop
     else
       puts 'Please press 1, 2 or 99'
@@ -43,6 +43,7 @@ class Router
     puts '1  - Race winner info'
     puts '2  - Best lap on race'
     puts '3  - Ranking table'
+    puts '4  - Best laps by pilot'
     puts '99 - stop'
   end
 end

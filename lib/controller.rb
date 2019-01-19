@@ -37,13 +37,13 @@ class Controller
     ranking
   end
 
-  def best_user_lap
+  def best_pilot_lap
     @individual_times.each do |pilot|
       pilot_laps = @race.laps.select{|x|x.pilot == pilot[0].to_s}
       lap = sort_by_lap_time(pilot_laps)
       time = seconds_to_string(lap.lap_time)
       # time = lap.lap_time
-      @view.print_best_user_lap(lap, time)
+      @view.print_best_pilot_lap(lap, time)
     end
 
   end
@@ -51,7 +51,7 @@ class Controller
   private
 
   def seconds_to_string(seconds)
-    p mil = ((seconds - seconds.to_i) * 1000).round(0)
+    mil = ((seconds - seconds.to_i) * 1000).round(0)
     min = (seconds.to_i / 60).round(0)
     sec = (seconds.to_i - min * 60).round(0)
     min.to_s + ':' + (sec < 10 ? '0' : '') + sec.to_s + '.' + (mil < 100 ? '0' : '') + mil.to_s

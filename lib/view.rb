@@ -20,4 +20,12 @@ class View
       puts "#{index+1}        | #{pilot[1][:cod]}-#{pilot[0].to_s} | #{pilot[1][:laps].size} | #{pilot[1][:race_time] }"
     end
   end
+
+  def print_best_user_lap(lap,time)
+    # print %x{clear}
+    puts "The best lap of #{lap.pilot}"
+    puts "Hour         | Pilot          | Lap Number| Lap Time| Lap avg pace"
+    puts "#{lap.hour} | #{lap.cod}-#{lap.pilot} | #{lap.lap_number}         | #{time}  | #{lap.lap_avg_pace}"
+    puts ''
+  end
 end

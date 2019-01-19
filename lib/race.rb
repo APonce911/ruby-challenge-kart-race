@@ -21,7 +21,14 @@ class Race
   def create_lap_instances(laps_parsed)
     @laps = []
     laps_parsed.each do |lap|
-      properties = {hour: lap[:hour], cod: lap[:cod].to_i, pilot: lap[:pilot], lap_number: lap[:lap_number].to_i, lap_time: lap[:lap_time],lap_avg_pace: lap[:lap_avg_pace] }
+      properties = {
+        hour: lap[:hour],
+        cod: lap[:cod].to_i,
+        pilot: lap[:pilot],
+        lap_number: lap[:lap_number].to_i,
+        lap_time: lap[:lap_time],
+        lap_avg_pace: lap[:lap_avg_pace]
+      }
       @laps << Lap.new(properties)
     end
   end

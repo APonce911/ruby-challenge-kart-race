@@ -111,6 +111,5 @@ describe 'The method Controller#best_pilot_lap:' do
   it 'Returns a Lap instance' do
     expect(controller.best_pilot_lap).to be_a Hash
     # expect(lap).to be_a(Lap)
-
   end
 end

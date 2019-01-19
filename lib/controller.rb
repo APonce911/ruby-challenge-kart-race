@@ -6,7 +6,7 @@ require_relative 'view'
 # Descobrir o vencedor da corrida - DONE
 # Descobrir a melhor volta da corrida - DONE
 # Tabela de rankings - DONE
-# Descobrir a melhor volta de cada piloto -
+# Descobrir a melhor volta de cada piloto - DONE
 # Calcular a velocidade media de cada piloto durante toda corrida
 # Descobrir quanto tempo cada piloto chegou apos o vencedor
 class Controller
@@ -39,13 +39,12 @@ class Controller
 
   def best_pilot_lap
     @individual_times.each do |pilot|
-      pilot_laps = @race.laps.select{|x|x.pilot == pilot[0].to_s}
+      pilot_laps = @race.laps.select { |x| x.pilot == pilot[0].to_s }
       lap = sort_by_lap_time(pilot_laps)
       time = seconds_to_string(lap.lap_time)
       # time = lap.lap_time
       @view.print_best_pilot_lap(lap, time)
     end
-
   end
 
   private

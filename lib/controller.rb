@@ -24,14 +24,14 @@ class Controller
 
   def best_race_lap
     lap = sort_by_lap_time(@race.laps)
-    # @view.print_best_race_lap(lap)
+    @view.print_best_race_lap(lap)
     lap
   end
 
   def race_ranking_table
     ranking = generate_ranking
     # @view.print_race_ranking_table(ranking)
-   # p ranking
+    ranking
   end
 
   private

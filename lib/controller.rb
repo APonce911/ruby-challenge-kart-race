@@ -13,6 +13,25 @@ class Controller
   end
 
   def race_winner
+    individual_times = {}
+    @race.laps.each do |lap|
+      if individual_times.key?(lap.pilot.to_sym)
+        individual_times[lap.pilot.to_sym] << lap.lap_time
+      else
+        individual_times[lap.pilot.to_sym] = [lap.lap_time]
+      end
+    end
+    # p individual_times
+    ranking = []
+    individual_times.each do |laps|
+      if laps[1].size == 4
+        pilot_total_time_array = [laps[0], laps[1].sum]
+        ranking << pilot_total_time_array
+      end
+    end
+     ranking.sort_by! { |pilot_total_time_array| pilot_total_time_array[1] }
+    p winner = ranking[0][0].to_s
+    p winner_time = ranking[0][1]
     'airton'
   end
 end

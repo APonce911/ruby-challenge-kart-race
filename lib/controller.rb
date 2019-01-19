@@ -30,6 +30,7 @@ class Controller
 
   def race_ranking_table
     ranking = generate_ranking
+    ranking << @incomplete.flatten
     update_race_time(ranking)
     @view.print_race_ranking_table(ranking)
     ranking
@@ -57,10 +58,13 @@ class Controller
 
   def generate_ranking
     ranking = []
+    @incomplete = []
     @individual_times.each do |pilot|
+      pilot[1][:race_time] = pilot[1][:laps].sum.truncate(3)
       if pilot[1][:laps].size == 4
-        pilot[1][:race_time] = pilot[1][:laps].sum.truncate(3)
         ranking << pilot
+      else
+        @incomplete << pilot
       end
     end
     ranking.sort_by! { |array| array[1][:race_time] }

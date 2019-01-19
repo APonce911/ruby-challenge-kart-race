@@ -22,9 +22,7 @@ class Controller
       end
     end
     ranking.sort_by! { |pilot_total_time_array| pilot_total_time_array[1] }
-    winner = ranking[0][0].to_s
-    # p winner_time = ranking[0][1]
-    winner
+    ranking[0][0].to_s
   end
 
   private
@@ -33,7 +31,7 @@ class Controller
     mil = ((seconds - seconds.to_i) * 1000).round(0)
     min = (seconds.to_i / 60).round(0)
     sec = (seconds.to_i - min * 60).round(0)
-    min.to_s + ':' + ('0' if sec < 10) + sec.to_s + '.' + mil.to_s
+    min.to_s + ':' + (sec < 10 ? '0' : '') + sec.to_s + '.' + mil.to_s
   end
 
   def individual_times

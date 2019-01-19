@@ -9,7 +9,7 @@ describe 'Controller', :controller do
   end
 end
 
-describe 'The method race_winner:' do
+describe 'The method Controller#race_winner:' do
   let(:race) { Race.new }
   let(:controller) { Controller.new(race) }
 
@@ -24,7 +24,7 @@ describe 'The method race_winner:' do
   end
 end
 
-describe 'The method seconds_to_string:' do
+describe 'The method Controller#seconds_to_string:' do
   let(:race) { Race.new }
   let(:controller) { Controller.new(race) }
 

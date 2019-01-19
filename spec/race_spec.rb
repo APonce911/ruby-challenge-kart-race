@@ -7,7 +7,7 @@ describe 'Race', :race do
   end
 end
 
-describe 'The method parse_data:' do
+describe 'The method Race#parse_data:' do
   race = Race.new
   it 'Is not nil' do
     expect(race.send(:parse_data)).not_to be_nil
@@ -32,7 +32,7 @@ describe 'The method parse_data:' do
   end
 end
 
-describe 'The method laps' do
+describe 'The method Race#laps' do
   race = Race.new
   it 'Is not nil' do
     expect(race.laps).not_to be_nil

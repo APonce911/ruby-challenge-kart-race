@@ -47,3 +47,14 @@ describe 'The method Controller#seconds_to_string:' do
     expect(controller.send(:seconds_to_string, 191.221)).to eq('3:11.221')
   end
 end
+
+describe 'The method Controller#best_lap' do
+  let(:race) { Race.new }
+  let(:controller) { Controller.new(race) }
+  it 'Returns a hash' do
+    expect(controller.best_lap).to be_a Hash
+  end
+  it "Hour attribute is a String " do
+    expect(controller.best_lap[:hour]).to be_a String
+  end
+end

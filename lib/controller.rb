@@ -21,7 +21,6 @@ class Controller
         individual_times[lap.pilot.to_sym] = [lap.lap_time]
       end
     end
-    p individual_times
     ranking = []
     individual_times.each do |laps|
       if laps[1].size == 4
@@ -30,19 +29,17 @@ class Controller
       end
     end
     ranking.sort_by! { |pilot_total_time_array| pilot_total_time_array[1] }
-    p ranking
-    p winner = ranking[0][0].to_s
+    winner = ranking[0][0].to_s
     p winner_time = ranking[0][1]
-    'airton'
+    winner
   end
 
   private
 
-  # def seconds_to_string(seconds)
-  #   seconds.trunc
-  #   min = seconds/60
-  #   sec =
-  #   mil =
-  # end
-
+  def seconds_to_string(seconds)
+    mil = ((seconds - seconds.to_i) * 1000).round(0)
+    min = (seconds.to_i / 60).round(0)
+    sec = (seconds.to_i - min * 60).round(0)
+    min.to_s + ':' + ('0' if sec < 10) + sec.to_s + '.' + mil.to_s
+  end
 end

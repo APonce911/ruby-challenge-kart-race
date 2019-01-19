@@ -24,12 +24,12 @@ class Router
   def route_action(action)
     case action
     when 1 then @controller.race_winner
-    # when 2 then @controller
+    when 2 then @controller.best_lap
     # when 3 then @controller
     # when 4 then @controller
     when 99 then stop
     else
-      puts 'Please press 1 or 99'
+      puts 'Please press 1, 2 or 99'
     end
   end
 
@@ -39,8 +39,9 @@ class Router
 
   def display_tasks
     puts ''
-    puts 'What do you want to do next?'
+    puts 'What would you like to know about the race?'
     puts '1  - Race winner info'
+    puts '2  - Best lap on race'
     puts '99 - stop'
   end
 end

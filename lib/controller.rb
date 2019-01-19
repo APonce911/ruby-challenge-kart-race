@@ -4,8 +4,8 @@ require_relative 'view'
 # The controller class will be responsible for calculating all results
 # TODO
 # Descobrir o vencedor da corrida - DONE
-# Descobrir a melhor volta de cada piloto
 # Descobrir a melhor volta da corrida
+# Descobrir a melhor volta de cada piloto
 # Calcular a velocidade media de cada piloto durante toda corrida
 # Descobrir quanto tempo cada piloto chegou apos o vencedor
 class Controller
@@ -19,6 +19,11 @@ class Controller
     individual_times
     ranking = generate_ranking
     @view.print_winner(ranking[0][0], seconds_to_string(ranking[0][1]))
+  end
+
+  def best_lap
+    lap = @race.laps.sort_by!(&:lap_time)[0]
+    @view.print_best_lap(lap)
   end
 
   private

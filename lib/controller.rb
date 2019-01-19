@@ -30,7 +30,8 @@ class Controller
 
   def race_ranking_table
     ranking = generate_ranking
-    # @view.print_race_ranking_table(ranking)
+    update_race_time(ranking)
+    @view.print_race_ranking_table(ranking)
     ranking
   end
 
@@ -67,5 +68,11 @@ class Controller
 
   def sort_by_lap_time(laps)
     laps.sort_by!(&:lap_time)[0]
+  end
+
+  def update_race_time(ranking)
+    ranking.each do |pilot|
+      pilot[1][:race_time] = seconds_to_string(pilot[1][:race_time])
+    end
   end
 end

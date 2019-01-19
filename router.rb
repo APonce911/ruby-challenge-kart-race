@@ -24,7 +24,7 @@ class Router
   def route_action(action)
     case action
     when 1 then @controller.race_winner
-    when 2 then @controller.best_lap
+    when 2 then @controller.best_race_lap
     # when 3 then @controller
     # when 4 then @controller
     when 99 then stop

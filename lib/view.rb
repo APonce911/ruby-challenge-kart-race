@@ -4,7 +4,7 @@ class View
     # print %x{clear}
     puts "The winner is #{winner}. He completed 4 laps on #{time} minutes."
   end
-  def print_best_lap(lap)
+  def print_best_race_lap(lap)
     # print %x{clear}
     puts 'The best lap is'
     puts ''

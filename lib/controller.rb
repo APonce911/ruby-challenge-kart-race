@@ -22,9 +22,10 @@ class Controller
     ranking
   end
 
-  def best_lap
-    lap = @race.laps.sort_by!(&:lap_time)[0]
-    @view.print_best_lap(lap)
+  def best_race_lap
+    # lap = @race.laps.sort_by!(&:lap_time)[0]
+    lap = sort_by_lap_time(@race.laps)
+    @view.print_best_race_lap(lap)
     lap
   end
 
@@ -57,5 +58,9 @@ class Controller
       end
     end
     ranking.sort_by! { |pilot_total_time_array| pilot_total_time_array[1] }
+  end
+
+  def sort_by_lap_time(laps)
+    laps.sort_by!(&:lap_time)[0]
   end
 end

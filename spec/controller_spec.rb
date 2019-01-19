@@ -48,28 +48,28 @@ describe 'The method Controller#seconds_to_string:' do
   end
 end
 
-describe 'The method Controller#best_lap' do
+describe 'The method Controller#best_race_lap' do
   let(:race) { Race.new }
   let(:controller) { Controller.new(race) }
   it 'Returns a Lap instance' do
-    expect(controller.best_lap).to be_a(Lap)
+    expect(controller.best_race_lap).to be_a(Lap)
   end
   it 'Hour attribute is a String ' do
-    expect(controller.best_lap.hour).to be_a String
+    expect(controller.best_race_lap.hour).to be_a String
   end
   it 'Pilot attribute is a String ' do
-    expect(controller.best_lap.pilot).to be_a String
+    expect(controller.best_race_lap.pilot).to be_a String
   end
   it 'Lap_avg_pace attribute is a String ' do
-    expect(controller.best_lap.lap_avg_pace).to be_a String
+    expect(controller.best_race_lap.lap_avg_pace).to be_a String
   end
   it 'Lap_time attribute is a String ' do
-    expect(controller.best_lap.lap_time).to be_a Float
+    expect(controller.best_race_lap.lap_time).to be_a Float
   end
   it 'Cod attribute is an Integer ' do
-    expect(controller.best_lap.cod).to be_a Integer
+    expect(controller.best_race_lap.cod).to be_a Integer
   end
   it 'Lap_number attribute is an Integer ' do
-    expect(controller.best_lap.lap_number).to be_a Integer
+    expect(controller.best_race_lap.lap_number).to be_a Integer
   end
 end

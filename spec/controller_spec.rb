@@ -19,8 +19,8 @@ describe 'The method Controller#race_winner:' do
   it 'Is not empty' do
     expect(controller.race_winner).not_to eq('')
   end
-  it 'Returns a string' do
-    expect(controller.race_winner).to be_a String
+  it 'Returns an Array' do
+    expect(controller.race_winner).to be_a Array
   end
 end
 

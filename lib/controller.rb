@@ -17,13 +17,15 @@ class Controller
 
   def race_winner
     individual_times
-    ranking = generate_ranking
-    @view.print_winner(ranking[0][0], seconds_to_string(ranking[0][1]))
+    ranking = generate_ranking[0]
+    @view.print_winner(ranking[0], seconds_to_string(ranking[1]))
+    ranking
   end
 
   def best_lap
     lap = @race.laps.sort_by!(&:lap_time)[0]
     @view.print_best_lap(lap)
+    lap
   end
 
   private

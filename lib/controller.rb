@@ -4,8 +4,8 @@ require_relative 'view'
 # The controller class will be responsible for calculating all results
 # TODO
 # Descobrir o vencedor da corrida - DONE
-# Descobrir a melhor volta da corrida
-# Descobrir a melhor volta de cada piloto
+# Descobrir a melhor volta da corrida - DONE
+# Descobrir a melhor volta de cada piloto -
 # Calcular a velocidade media de cada piloto durante toda corrida
 # Descobrir quanto tempo cada piloto chegou apos o vencedor
 class Controller
@@ -13,20 +13,25 @@ class Controller
   def initialize(race)
     @race = race
     @view = View.new
+    individual_times
   end
 
   def race_winner
-    individual_times
-    ranking = generate_ranking[0]
-    @view.print_winner(ranking[0], seconds_to_string(ranking[1]))
-    ranking
+    first_place = generate_ranking[0]
+    @view.print_winner(first_place[0], seconds_to_string(first_place[1][:race_time]))
+    first_place
   end
 
   def best_race_lap
-    # lap = @race.laps.sort_by!(&:lap_time)[0]
     lap = sort_by_lap_time(@race.laps)
-    @view.print_best_race_lap(lap)
+    # @view.print_best_race_lap(lap)
     lap
+  end
+
+  def race_ranking_table
+    ranking = generate_ranking
+    # @view.print_race_ranking_table(ranking)
+   # p ranking
   end
 
   private
@@ -42,22 +47,22 @@ class Controller
     @individual_times = {}
     @race.laps.each do |lap|
       if @individual_times.key?(lap.pilot.to_sym)
-        @individual_times[lap.pilot.to_sym] << lap.lap_time
+        @individual_times[lap.pilot.to_sym][:laps] << lap.lap_time
       else
-        @individual_times[lap.pilot.to_sym] = [lap.lap_time]
+        @individual_times[lap.pilot.to_sym] = { cod: lap.cod, laps: [lap.lap_time] }
       end
     end
   end
 
   def generate_ranking
     ranking = []
-    @individual_times.each do |laps|
-      if laps[1].size == 4
-        pilot_total_time_array = [laps[0], laps[1].sum.truncate(3)]
-        ranking << pilot_total_time_array
+    @individual_times.each do |pilot|
+      if pilot[1][:laps].size == 4
+        pilot[1][:race_time] = pilot[1][:laps].sum.truncate(3)
+        ranking << pilot
       end
     end
-    ranking.sort_by! { |pilot_total_time_array| pilot_total_time_array[1] }
+    ranking.sort_by! { |array| array[1][:race_time] }
   end
 
   def sort_by_lap_time(laps)

@@ -3,15 +3,10 @@ require_relative 'lap'
 # this class will be responsable of creating all instances of Lap objects
 class Race
   def initialize
-
     create_lap_instances(parse_data)
   end
 
   attr_reader :laps
-
-  # def laps
-  #   @laps
-  # end
 
   private
 
@@ -33,9 +28,9 @@ class Race
   end
 end
 
-r = Race.new
-p r
-p r.class
-p r.laps
-p r.laps.class
-p r.laps[0]
+# r = Race.new
+# p r
+# p r.class
+# p r.laps
+# p r.laps.class
+# p r.laps[0]

@@ -1,4 +1,5 @@
 require 'csv'
+require 'time'
 require_relative 'lap'
 # this class will be responsable of creating all instances of Lap objects
 class Race
@@ -14,6 +15,7 @@ class Race
     'airton'
   end
 
+
   private
 
   def parse_data
@@ -27,12 +29,19 @@ class Race
   def create_lap_instances
     @laps = []
     @laps_hash.each do |lap|
-      properties = { cod: lap[:cod], pilot: lap[:pilot], lap_number: lap[:lap_number], lap_time: lap[:lap_time] }
+      seconds = string_to_seconds(lap[:lap_time])
+      properties = { cod: lap[:cod].to_i, pilot: lap[:pilot], lap_number: lap[:lap_number].to_i, lap_time: seconds }
       @laps << Lap.new(properties)
-      # p "ihull"
     end
-    @laps
+  end
+
+  def string_to_seconds(string)
+    min_to_sec = string[0].to_i * 60
+    mil_to_sec = string[5..7].to_f / 1000
+    string[2..3].to_f + mil_to_sec + min_to_sec
   end
 end
 
-# r = Race.new
+r = Race.new
+p r.string_to_seconds('1:03.987')
+

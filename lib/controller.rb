@@ -1,4 +1,6 @@
 require_relative 'race'
+require_relative 'view'
+
 # The controller class will be responsible for calculating all results
 # TODO
 # Descobrir o vencedor da corrida - DONE
@@ -10,10 +12,12 @@ class Controller
   # initialize(race) takes an instance of the Race as an argument.
   def initialize(race)
     @race = race
+    @view = View.new
     individual_times
   end
 
   def race_winner
+    print %x{clear}
     ranking = []
     @individual_times.each do |laps|
       if laps[1].size == 4
@@ -22,7 +26,7 @@ class Controller
       end
     end
     ranking.sort_by! { |pilot_total_time_array| pilot_total_time_array[1] }
-    ranking[0][0].to_s
+    @view.print_winner(ranking[0][0], seconds_to_string(ranking[0][1]))
   end
 
   private

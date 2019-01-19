@@ -54,7 +54,22 @@ describe 'The method Controller#best_lap' do
   it 'Returns a hash' do
     expect(controller.best_lap).to be_a Hash
   end
-  it "Hour attribute is a String " do
+  it 'Hour attribute is a String ' do
     expect(controller.best_lap[:hour]).to be_a String
+  end
+  it 'Pilot attribute is a String ' do
+    expect(controller.best_lap[:pilot]).to be_a String
+  end
+  it 'Lap_time attribute is a String ' do
+    expect(controller.best_lap[:lap_time]).to be_a String
+  end
+  it 'Lap_avg_pace attribute is a String ' do
+    expect(controller.best_lap[:lap_avg_pace]).to be_a String
+  end
+  it 'Cod attribute is an Integer ' do
+    expect(controller.best_lap[:cod]).to be_a Integer
+  end
+  it 'Lap_number attribute is an Integer ' do
+    expect(controller.best_lap[:lap_number]).to be_a Integer
   end
 end

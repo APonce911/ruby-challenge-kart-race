@@ -1,7 +1,7 @@
 require_relative 'race'
 # The controller class will be responsible for calculating all results
 # TODO
-# Descobrir o vencedor
+# Descobrir o vencedor da corrida
 # Descobrir a melhor volta de cada piloto
 # Descobrir a melhor volta da corrida
 # Calcular a velocidade media de cada piloto durante toda corrida

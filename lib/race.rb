@@ -14,6 +14,10 @@ class Race
     'airton'
   end
 
+  def laps
+    @laps
+  end
+
   private
 
   def parse_data
@@ -31,7 +35,6 @@ class Race
       properties = { cod: lap[:cod].to_i, pilot: lap[:pilot], lap_number: lap[:lap_number].to_i, lap_time: lap[:lap_time] }
       @laps << Lap.new(properties)
     end
-    @laps
   end
 end
 

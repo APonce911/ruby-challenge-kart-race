@@ -1,5 +1,4 @@
 require 'csv'
-require 'time'
 require_relative 'lap'
 # this class will be responsable of creating all instances of Lap objects
 class Race

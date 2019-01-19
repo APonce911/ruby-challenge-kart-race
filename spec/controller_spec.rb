@@ -43,4 +43,7 @@ describe 'The method seconds_to_string:' do
   it "Returns '1:03.745' with 63.745 seconds" do
     expect(controller.send(:seconds_to_string, 63.745)).to eq('1:03.745')
   end
+  it "Returns '3:11.221' with 191.221 seconds" do
+    expect(controller.send(:seconds_to_string, 191.221)).to eq('3:11.221')
+  end
 end

@@ -73,3 +73,27 @@ describe 'The method Controller#best_race_lap' do
     expect(controller.best_race_lap.lap_number).to be_a Integer
   end
 end
+
+describe 'The method Controller#race_ranking_table:' do
+  let(:race) { Race.new }
+  let(:controller) { Controller.new(race) }
+
+  it 'Is not nil' do
+    expect(controller.race_ranking_table).not_to be_nil
+  end
+  it 'Is not empty' do
+    expect(controller.race_ranking_table).not_to eq('')
+  end
+  it 'Returns an Array' do
+    expect(controller.race_ranking_table).to be_a Array
+  end
+  it 'Has nested Arrays' do
+    expect(controller.race_ranking_table[0]).to be_a Array
+  end
+  it 'Has pilot symbol on index 0' do
+    expect(controller.race_ranking_table[0][0]).to be_a Symbol
+  end
+  it 'Has pilot race data as Hash on index 1' do
+    expect(controller.race_ranking_table[0][1]).to be_a Hash
+  end
+end

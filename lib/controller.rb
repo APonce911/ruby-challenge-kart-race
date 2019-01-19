@@ -6,4 +6,7 @@ class Controller
     @race = race
   end
 
+  def race_winner
+    'airton'
+  end
 end

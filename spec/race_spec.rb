@@ -7,20 +7,6 @@ describe 'Race', :race do
   end
 end
 
-
-describe 'The method race_winner:' do
-  race = Race.new
-  it 'Is not nil' do
-    expect(race.race_winner).not_to be_nil
-  end
-  it 'Is not empty' do
-    expect(race.race_winner).not_to eq('')
-  end
-  it 'Returns a string' do
-    expect(race.race_winner).to be_a String
-  end
-end
-
 describe 'The method parse_data:' do
   race = Race.new
   it 'Is not nil' do

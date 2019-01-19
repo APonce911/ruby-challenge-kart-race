@@ -9,7 +9,7 @@ describe 'Lap', :lap do
 end
 
 describe 'The method string_to_seconds:' do
-  lap = Lap.new(lap_time:'1:05.345')
+  lap = Lap.new(lap_time: '1:05.345')
   it 'Gives a float' do
     expect(lap.lap_time).to be_a Float
   end

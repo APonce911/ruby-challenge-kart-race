@@ -60,9 +60,8 @@ class Controller
   def pilot_avg_pace
     ranking = generate_ranking
     ranking.each_with_index do |pilot, index|
-      # pilot[1]
       position = index + 1
-      avg_pace = (pilot[1][:laps_avg_pace].sum / pilot[1][:laps_avg_pace].size).round(3)
+      avg_race_pace = (pilot[1][:laps_avg_pace].sum / pilot[1][:laps_avg_pace].size).round(3)
       @view.print_pilot_avg_pace(position, pilot, avg_race_pace)
     end
   end

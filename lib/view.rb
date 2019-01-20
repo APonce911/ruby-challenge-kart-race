@@ -21,7 +21,7 @@ class View
 
   def print_race_ranking_table(ranking)
     ranking.each_with_index do |pilot, index|
-      puts "#{index + 1}".ljust(10) + "| #{pilot[1][:cod]}-#{pilot[0]}".ljust(19) + "| #{pilot[1][:laps].size}".ljust(17) + "| #{pilot[1][:race_time] }".ljust(12)
+      puts " #{index + 1}".ljust(10) + "| #{pilot[1][:cod]}-#{pilot[0]}".ljust(19) + "| #{pilot[1][:laps].size}".ljust(17) + "| #{pilot[1][:race_time] }".ljust(12)
     end
   end
 
@@ -36,10 +36,14 @@ class View
     puts "#{lap.hour}".ljust(13) + "| #{lap.cod}-#{lap.pilot}".ljust(19) + "| #{lap.lap_number}".ljust(12) + "| #{time}".ljust(10) + "| #{lap.lap_avg_pace}".ljust(15)
   end
 
+  def print_time_after_first_header
+    puts 'The time differece to complete the race VS winner:'
+    puts ''
+    puts 'Position'.ljust(10) + '| Pilot'.ljust(19) + '| Race Time'.ljust(12) + '| Time difference:'.ljust(24)
+  end
+
   def print_time_after_first(position, pilot, time_difference)
-    # puts 'Position | Pilot       | Race time | Time difference '
-    # puts "#{position}        | #{pilot[0]} | #{pilot[1][:race_time]}| #{time_difference}"
-    puts "Position: #{position} | Pilot: #{pilot[0]} | Race time: #{pilot[1][:race_time]} | Time difference: #{time_difference}"
+    puts "#{position}".ljust(10) + "| #{pilot[0]}".ljust(19) + "| #{pilot[1][:race_time]}".ljust(12) + "| #{time_difference}".ljust(24)
   end
 
   def print_pilot_avg_pace_header

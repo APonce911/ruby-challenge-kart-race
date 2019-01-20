@@ -51,6 +51,7 @@ class Controller
   end
 
   def time_after_first
+    @view.print_time_after_first_header
     ranking = generate_ranking
     winner_race_time = ranking[0][1][:race_time]
     ranking.each_with_index do |pilot, index|

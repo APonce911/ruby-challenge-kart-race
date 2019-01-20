@@ -108,8 +108,24 @@ describe 'The method Controller#best_pilot_lap:' do
   it 'Is not empty' do
     expect(controller.best_pilot_lap).not_to eq('')
   end
-  it 'Returns a Lap instance' do
+  it 'Returns a Hash' do
     expect(controller.best_pilot_lap).to be_a Hash
+    # expect(lap).to be_a(Lap)
+  end
+end
+
+describe 'The method Controller#time_after_first:' do
+  let(:race) { Race.new }
+  let(:controller) { Controller.new(race) }
+
+  it 'Is not nil' do
+    expect(controller.time_after_first).not_to be_nil
+  end
+  it 'Is not empty' do
+    expect(controller.time_after_first).not_to eq('')
+  end
+  it 'Returns a Lap instance' do
+    expect(controller.time_after_first).to be_a Hash
     # expect(lap).to be_a(Lap)
   end
 end

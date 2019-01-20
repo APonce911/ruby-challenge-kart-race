@@ -24,9 +24,8 @@ class View
   def print_best_pilot_lap(lap, time)
     # print %x{clear}
     puts "The best lap of #{lap.pilot}"
-    # puts 'Hour         | Pilot          | Lap Number| Lap Time| Lap avg pace'
-    # puts "#{lap.hour} | #{lap.cod}-#{lap.pilot} | #{lap.lap_number}         | #{time}  | #{lap.lap_avg_pace}"
-    puts "Hour: #{lap.hour} | Pilot: #{lap.cod}-#{lap.pilot} | Lap number: #{lap.lap_number} | Lap time: #{time} | Lap average pace: #{lap.lap_avg_pace}"
+    puts 'Hour'.ljust(13) + '| Pilot'.ljust(19) + '| Lap number'.ljust(12) + '| Lap time'.ljust(10) + '| Lap avg pace'.ljust(15)
+    puts "#{lap.hour}".ljust(13) + "| #{lap.cod}-#{lap.pilot}".ljust(19) + "| #{lap.lap_number}".ljust(12) + "| #{time}".ljust(10) + "| #{lap.lap_avg_pace}".ljust(15)
     puts ''
   end
 

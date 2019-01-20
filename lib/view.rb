@@ -23,10 +23,7 @@ class View
 
   def print_best_pilot_lap(lap, time)
     # print %x{clear}
-    puts "The best lap of #{lap.pilot}"
-    puts 'Hour'.ljust(13) + '| Pilot'.ljust(19) + '| Lap number'.ljust(12) + '| Lap time'.ljust(10) + '| Lap avg pace'.ljust(15)
     puts "#{lap.hour}".ljust(13) + "| #{lap.cod}-#{lap.pilot}".ljust(19) + "| #{lap.lap_number}".ljust(12) + "| #{time}".ljust(10) + "| #{lap.lap_avg_pace}".ljust(15)
-    puts ''
   end
 
   def print_time_after_first(position, pilot, time_difference)
@@ -37,5 +34,11 @@ class View
 
   def print_pilot_avg_pace(position, pilot, avg_race_pace)
     puts "Position: #{position} | Pilot: #{pilot[0]} | Average race pace: #{avg_race_pace}"
+  end
+
+  def print_best_pilot_lap_header
+    puts 'The best laps of each pilot:'
+    puts ''
+    puts 'Hour'.ljust(13) + '| Pilot'.ljust(19) + '| Lap number'.ljust(12) + '| Lap time'.ljust(10) + '| Lap avg pace'.ljust(15)
   end
 end

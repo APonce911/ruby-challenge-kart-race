@@ -39,6 +39,7 @@ class Controller
   end
 
   def best_pilot_lap
+    @view.print_best_pilot_lap_header
     @individual_times.each do |pilot|
       pilot_laps = @race.laps.select { |x| x.pilot == pilot[0].to_s }
       lap = sort_by_lap_time(pilot_laps)

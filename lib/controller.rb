@@ -60,6 +60,7 @@ class Controller
   end
 
   def pilot_avg_pace
+    @view.print_pilot_avg_pace_header
     ranking = generate_ranking
     ranking.each_with_index do |pilot, index|
       position = index + 1

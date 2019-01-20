@@ -4,7 +4,7 @@
 ## Challenge
 * [Description](https://github.com/Gympass/interview-test)
 
-Esse é um app simples para rodar no terminal, e nos fornecer os resultados de uma corrida.
+Esse é um app simples feito em Ruby('2.4.4') para rodar no terminal, e nos fornecer os resultados de uma corrida.
 
 Para clonar o repositório digite o codigo abaixo no console:
 
@@ -29,7 +29,7 @@ OBS:corrigi a linha com nome F.MASS para F.MASSA
 
 ```text
 Hora                               Piloto             Nº Volta   Tempo Volta       Velocidade média da volta
-23:52:17.003      038 – F.MASS                            4   1:02.787                        44,321
+23:52:17.003                    038 – F.MASS           4         1:02.787          44,321
 ```
 
 OBS 2: Nos comandos 5 e 6 não inclui o piloto S.VETTEL pois ele não completou a corrida.

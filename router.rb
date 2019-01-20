@@ -28,6 +28,7 @@ class Router
     when 3 then @controller.race_ranking_table
     when 4 then @controller.best_pilot_lap
     when 5 then @controller.time_after_first
+    when 6 then @controller.pilot_avg_pace
     when 99 then stop
     else
       puts 'Please press 1, 2 or 99'
@@ -46,6 +47,7 @@ class Router
     puts '3  - Ranking table'
     puts '4  - Best laps by pilot'
     puts '5  - Time difference table (pilot x winner)'
+    puts '6  - Average race pace per pilot'
     puts '99 - stop'
   end
 end

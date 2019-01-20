@@ -6,7 +6,7 @@ class Lap
     @pilot = attributes[:pilot]
     @lap_number = attributes[:lap_number]
     @lap_time = string_to_seconds(attributes[:lap_time])
-    @lap_avg_pace = attributes[:lap_avg_pace]
+    @lap_avg_pace = string_to_float(attributes[:lap_avg_pace])
   end
 
   attr_reader :hour, :cod, :pilot, :lap_number, :lap_time, :lap_avg_pace
@@ -18,5 +18,9 @@ class Lap
     mil_to_sec = (string[5..7].to_f / 1000).truncate(3)
     seconds = string[2..3].to_f.truncate(0)
     (seconds + mil_to_sec + min_to_sec).truncate(3)
+  end
+
+  def string_to_float(string)
+    string.tr!(',', '.').to_f
   end
 end

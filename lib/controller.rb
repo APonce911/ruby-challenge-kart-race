@@ -8,7 +8,7 @@ require_relative 'view'
 # Tabela de rankings - DONE
 # Descobrir a melhor volta de cada piloto - DONE
 # Descobrir quanto tempo cada piloto chegou apos o vencedor DONE
-# Calcular a velocidade media de cada piloto durante toda corrida
+# Calcular a velocidade media de cada piloto durante toda corrida DONE
 class Controller
   # initialize(race) takes an instance of the Race as an argument.
   def initialize(race)

@@ -6,4 +6,4 @@ task :rubocop do
   sh 'rubocop --format simple || true'
 end
 
-task default: %i[rubocop spec]
+task default: %i[spec]

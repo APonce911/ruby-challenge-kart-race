@@ -7,7 +7,7 @@ require_relative 'view'
 # Descobrir a melhor volta da corrida - DONE
 # Tabela de rankings - DONE
 # Descobrir a melhor volta de cada piloto - DONE
-# Descobrir quanto tempo cada piloto chegou apos o vencedor
+# Descobrir quanto tempo cada piloto chegou apos o vencedor DONE
 # Calcular a velocidade media de cada piloto durante toda corrida
 class Controller
   # initialize(race) takes an instance of the Race as an argument.
@@ -55,6 +55,12 @@ class Controller
       time_difference =  (pilot[1][:race_time] - winner_race_time).round(3)
       @view.print_time_after_first(position, pilot, time_difference)
     end
+  end
+
+  def pilot_avg_pace
+    # loop on pilot data
+    # avg([:lap_avg_pace])
+    # print
   end
 
   private

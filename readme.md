@@ -1,7 +1,8 @@
 Esse é um App para rodar terminal
 
-Para iniciar o app rode o comando >ruby app.rb no terminal
+Para realizar testes rode o comando >rake
 
+Para iniciar o app rode o comando >ruby app.rb
 
 
 OBS: corrigi a linha com nome F.MASS to F.MASSA

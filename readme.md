@@ -1,8 +1,7 @@
  Ruby Challenge - Kart Race
 ============================
 
-## Challenge
-* [Description](https://github.com/Gympass/interview-test)
+* [Descrição](https://github.com/Gympass/interview-test)
 
 Esse é um app simples feito em Ruby('2.4.4') para rodar no terminal, e nos fornecer os resultados de uma corrida.
 

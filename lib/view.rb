@@ -28,4 +28,10 @@ class View
     puts "#{lap.hour} | #{lap.cod}-#{lap.pilot} | #{lap.lap_number}         | #{time}  | #{lap.lap_avg_pace}"
     puts ''
   end
+
+  def print_time_after_first(position, pilot, time_difference)
+    # puts 'Position | Pilot       | Race time | Time difference '
+    # puts "#{position}        | #{pilot[0]} | #{pilot[1][:race_time]}| #{time_difference}"
+    puts "Position:#{position} | Pilot:#{pilot[0]} | Race time:#{pilot[1][:race_time]} | Time difference:#{time_difference}"
+  end
 end

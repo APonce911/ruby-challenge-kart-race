@@ -124,8 +124,7 @@ describe 'The method Controller#time_after_first:' do
   it 'Is not empty' do
     expect(controller.time_after_first).not_to eq('')
   end
-  it 'Returns a Lap instance' do
-    expect(controller.time_after_first).to be_a Hash
-    # expect(lap).to be_a(Lap)
+  it 'Returns an Array' do
+    expect(controller.time_after_first).to be_a Array
   end
 end

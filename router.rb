@@ -41,6 +41,7 @@ class Router
 
   def display_tasks
     puts ''
+    puts '----------------------------------------------------------------------'
     puts 'What would you like to know about the race?'
     puts '1  - Race winner info'
     puts '2  - Best lap on race'

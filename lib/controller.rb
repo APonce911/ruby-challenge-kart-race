@@ -31,6 +31,7 @@ class Controller
   end
 
   def race_ranking_table
+    @view.print_race_ranking_table_header
     ranking = generate_ranking
     ranking << @incomplete.flatten
     update_race_time(ranking)

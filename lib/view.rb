@@ -5,13 +5,13 @@ class View
     puts "The winner is #{winner}. He completed 4 laps on #{time} minutes."
   end
 
-  def print_best_race_lap(lap)
+  def print_best_race_lap(lap, time)
     # print %x{clear}
     puts 'The best lap is:'
     puts ''
-    # puts "Hour: #{lap.hour}; Pilot: #{lap.cod}-#{lap.pilot}; Lap Number: #{lap.lap_number}; Lap Time: #{lap.lap_time}; Lap avg pace: #{lap.lap_avg_pace};"
-    # puts 'Hour         | Pilot          | Lap Number| Lap Time| Lap avg pace'
-    puts "Hour: #{lap.hour} | Pilot: #{lap.cod}-#{lap.pilot} | Lap number: #{lap.lap_number} | Lap time: #{lap.lap_time}  | Lap average pace: #{lap.lap_avg_pace}"
+    puts 'Hour'.ljust(13) + '| Pilot'.ljust(19) + '| Lap number'.ljust(12) + '| Lap time'.ljust(10) + '| Lap avg pace'.ljust(15)
+    puts "#{lap.hour}".ljust(13) + "| #{lap.cod}-#{lap.pilot}".ljust(19) + "| #{lap.lap_number}".ljust(12) + "| #{time}".ljust(10) + "| #{lap.lap_avg_pace}".ljust(15)
+
   end
 
   def print_race_ranking_table(ranking)

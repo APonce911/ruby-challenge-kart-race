@@ -25,7 +25,8 @@ class Controller
 
   def best_race_lap
     lap = sort_by_lap_time(@race.laps)
-    @view.print_best_race_lap(lap)
+    time = seconds_to_string(lap.lap_time)
+    @view.print_best_race_lap(lap, time)
     lap
   end
 

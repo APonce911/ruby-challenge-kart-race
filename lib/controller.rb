@@ -58,9 +58,13 @@ class Controller
   end
 
   def pilot_avg_pace
-    # loop on pilot data
-    # avg([:lap_avg_pace])
-    # print
+    ranking = generate_ranking
+    ranking.each_with_index do |pilot, index|
+      # pilot[1]
+      position = index + 1
+      avg_pace = (pilot[1][:laps_avg_pace].sum / pilot[1][:laps_avg_pace].size).round(3)
+      @view.print_pilot_avg_pace(position, pilot, avg_race_pace)
+    end
   end
 
   private
@@ -77,8 +81,9 @@ class Controller
     @race.laps.each do |lap|
       if @individual_times.key?(lap.pilot.to_sym)
         @individual_times[lap.pilot.to_sym][:laps] << lap.lap_time
+        @individual_times[lap.pilot.to_sym][:laps_avg_pace] << lap.lap_avg_pace
       else
-        @individual_times[lap.pilot.to_sym] = { cod: lap.cod, laps: [lap.lap_time] }
+        @individual_times[lap.pilot.to_sym] = { cod: lap.cod, laps: [lap.lap_time], laps_avg_pace: [lap.lap_avg_pace] }
       end
     end
   end

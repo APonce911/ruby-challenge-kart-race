@@ -31,7 +31,7 @@ class Router
     when 6 then @controller.pilot_avg_pace
     when 99 then stop
     else
-      puts 'Please press 1, 2 or 99'
+      puts 'Please press 1, 2, 3, 4, 5, 6  or 99'
     end
   end
 
